@@ -1,0 +1,18 @@
+# import Post from "post.graphql"
+
+type Query {
+  testString: String
+  user(name: String!): User
+  allUsers: [User]
+}
+
+type User {
+  id: Int
+  num: Int
+  name: String
+  bestFriendId: Int
+  bestFriend: User
+  followingUsers: [User]
+  followingUserIds: [Int]
+  posts: [Post]
+}

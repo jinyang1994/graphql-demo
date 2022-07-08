@@ -1,0 +1,12 @@
+schema:
+  './src/schema/**/*.graphql':
+    noRequire: true
+generates:
+  src/generated-types.ts:
+    config:
+      contextType: './types#Context'
+    plugins:
+      - add: 
+          content: '/* tslint:disable */'
+      - typescript
+      - 'typescript-resolvers'

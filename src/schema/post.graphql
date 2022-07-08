@@ -1,0 +1,6 @@
+type Post {
+  id: Int
+  title: String
+  date: String
+  count: Int
+}
