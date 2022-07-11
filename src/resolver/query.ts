@@ -7,7 +7,6 @@ const resolvers: Resolvers = {
       return userModel.getUserByName(name)
     },
     allUsers() {
-      console.log(123123)
       return userModel.getAllUsers()
     }
   }
