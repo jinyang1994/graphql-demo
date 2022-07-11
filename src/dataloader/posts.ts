@@ -2,7 +2,7 @@ import DataLoader from 'dataloader';
 import { postModel } from '../model'
 import { Post } from '../generated-types';
 
-export default {
+export default () => ({
   posts: new DataLoader<number, Post[]>(async userIds => {
     const posts = await postModel.getPostsByUserIds(userIds)
 
@@ -10,4 +10,4 @@ export default {
       posts.filter(post => post.userId === userId)
     )
   })
-}
+})

@@ -6,6 +6,7 @@ type Query {
   allUsers: [User]
 }
 
+"用户"
 type User {
   id: Int
   num: Int
