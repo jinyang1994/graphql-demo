@@ -17,3 +17,12 @@ type User {
   followingUserIds: [Int]
   posts: [Post]
 }
+
+input UserInput {
+  name: String
+  num: Int
+}
+
+type Mutation {
+  updateUser(id: Int, data: UserInput): User
+}

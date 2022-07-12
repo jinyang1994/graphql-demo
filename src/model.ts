@@ -38,6 +38,18 @@ export const userModel = (() => {
       Promise.resolve(
         users.filter(user => ids.includes(user.id))
       ),
-    getAllUsers: () => Promise.resolve(users)
+    getAllUsers: () => Promise.resolve(users),
+    updateUserById: (id, data) => {
+      const index = users.findIndex(user => user.id === id)
+
+      if (index >= 0) {
+        users[index] = {
+          ...users[index],
+          ...data
+        }
+      }
+
+      return users[index]
+    }
   }
 })()
