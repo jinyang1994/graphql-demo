@@ -8,21 +8,24 @@ type Query {
 
 "用户"
 type User {
-  id: Int
+  id: String
   num: Int
   name: String
-  bestFriendId: Int
+  bestFriendId: String
   bestFriend: User
   followingUsers: [User]
-  followingUserIds: [Int]
+  followingUserIds: [String]
   posts: [Post]
 }
 
 input UserInput {
-  name: String
-  num: Int
+  num: Int!
+  name: String!
+  bestFriendId: String
+  followingUserIds: [String]
 }
 
 type Mutation {
-  updateUser(id: Int, data: UserInput): User
+  updateUser(id: String, data: UserInput): User
+  createUser(data: UserInput): User
 }

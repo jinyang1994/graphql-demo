@@ -32,8 +32,8 @@ async function startApolloServer() {
   const app = new Koa();
   server.applyMiddleware({ app });
   httpServer.on('request', app.callback());
-  await new Promise<void>(resolve => httpServer.listen({ port: 1234 }, resolve));
-  console.log(`🚀 Server ready at http://localhost:1234${server.graphqlPath}`);
+  await new Promise<void>(resolve => httpServer.listen({ port: 7899 }, resolve));
+  console.log(`🚀 Server ready at http://localhost:7899${server.graphqlPath}`);
   return { server, app };
 }
 

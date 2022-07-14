@@ -1,6 +1,16 @@
 type Post {
-  id: Int
+  id: String
   title: String
   date: String
   count: Int
+}
+
+input PostInput {
+  userId: String!
+  title: String!
+  count: Int!
+}
+
+type Mutation {
+  createPost(data: PostInput): Post
 }

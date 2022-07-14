@@ -1,13 +1,22 @@
-import { userModel } from '../model'
+import { userModel, postModel } from '../model'
 import { Resolvers } from '../generated-types';
 
 const resolvers: Resolvers = {
   Mutation: {
-    updateUser(_, { id, data }) {
-      console.log(id, data)
-      const user = userModel.updateUserById(id, data)
+    async updateUser(_, { id, data }) {
+      const user = await userModel.updateUserById(id, data)
 
       return user
+    },
+    async createUser(_, { data }) {
+      const user = await userModel.createUser(data)
+
+      return user
+    },
+    async createPost(_, { data }) {
+      const post = await postModel.createPost(data)
+
+      return post
     }
   }
 }

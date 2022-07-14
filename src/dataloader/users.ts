@@ -4,7 +4,7 @@ import { User } from '../generated-types';
 
 export default () => {
   return {
-    users: new DataLoader<number, User>(async userIds => {
+    users: new DataLoader<string, User>(async userIds => {
       const users = await userModel.getUsersByIds(userIds)
       return userIds.map(userId => users.find(user => user.id === userId))
     }),

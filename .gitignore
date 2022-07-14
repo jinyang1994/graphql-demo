@@ -1,3 +1,6 @@
 node_modules
 generated-types.ts
 dist
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

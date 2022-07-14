@@ -3,7 +3,7 @@ import { postModel } from '../model'
 import { Post } from '../generated-types';
 
 export default () => ({
-  posts: new DataLoader<number, Post[]>(async userIds => {
+  posts: new DataLoader<string, Post[]>(async userIds => {
     const posts = await postModel.getPostsByUserIds(userIds)
 
     return userIds.map(userId =>
